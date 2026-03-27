@@ -3,71 +3,157 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chasseuse de fautes</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <title>Sublime Écriture | Donnez à vos mots l'attention qu'ils méritent</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
-        <div class="logo">
-            <a href="#">CHASSEUSE <em>de fautes</em> ✏️</a>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <span class="main-logo-part">Sublime écriture</span>
+                <span class="sub-logo-part">l'art du mot juste</span>
+            </a>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#" class="active">Accueil</a></li>
+                    <li class="dropdown">
+                        <a href="#">Services</a>
+                        <div class="dropdown-content">
+                            <p>Quel service vous correspond ?</p>
+                            <ul>
+                                <li><a href="#">L'artiste</a></li>
+                                <li><a href="#">L'étudiant</a></li>
+                                <li><a href="#">Le professionnel</a></li>
+                                <li><a href="#">Le particulier</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">À propos</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </nav>
+            
+            <div class="cart-icon">
+                <span class="icon">&#128722;</span> <span class="count">0</span>
+            </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">À propos</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Blog</a></li>
-                <li class="cart-icon">🛒 0</li>
-            </ul>
-        </nav>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="hero-text">
-                <h1>Donnez à vos mots l'attention qu'ils méritent.</h1>
-                <p>La langue française nous fait douter et commettre quelques imperfections, mais elles ne sont pas une fatalité. Maintenant que vous avez écrit votre texte, vous pouvez vous féliciter et vous reposer sur une correctrice professionnelle pour chasser vos erreurs.</p>
-            </div>
-            <div class="hero-image">
-                <img src="images/livres.jpg" alt="Stack of books with leaves">
-            </div>
-        </section>
+    <section class="hero">
+        <div class="hero-left">
+            <h1>Donnez à vos <em>mots</em><br> l'attention qu'ils méritent.</h1>
+            <p>
+                La langue française nous fait douter et commettre quelques imperfections, mais elles ne sont pas une fatalité. Maintenant que vous avez écrit votre texte, vous pouvez vous féliciter et vous reposer sur une correctrice professionnelle pour chasser vos erreurs.
+            </p>
+        </div>
+        <div class="hero-right">
+            <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?q=80&w=600&auto=format&fit=crop" alt="Piles de livres et une branche verte" class="hero-books">
+            
+            <div class="play-pause-control">
+                <span>&#10074;&#10074;</span> </div>
+        </div>
+        
+        <div class="ai-assistant-icon-section">
+            <svg class="ai-icon" viewBox="0 0 100 100" fill="none">
+                <rect x="5" y="5" width="90" height="90" rx="10" stroke="#000" stroke-width="6"/>
+                <path d="M50 20 L30 50 L50 80 L70 50 Z" stroke="#000" stroke-width="6" fill="#00e676"/>
+                <circle cx="50" cy="50" r="10" stroke="#000" stroke-width="6" fill="#fff"/>
+            </svg>
+        </div>
+    </section>
 
-        <section class="about">
-            <div class="about-image">
-                <img src="images/photo.jpg" alt="Margaux">
+    <section class="about">
+        <h2>Enchantée, moi c'est Margaux !</h2>
+        
+        <div class="about-content">
+            <div class="profile-frame">
+                <img src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=300&h=300&auto=format&fit=crop" alt="Portrait de Margaux" class="profile-pic">
             </div>
+            
             <div class="about-text">
-                <h2>Enchantée, moi c'est Margaux !</h2>
-                <p>Le matin, je suis professeure de français et l'après-midi, je travaille au service de vos textes. J'ai obtenu ma <strong>certification de correctrice professionnelle</strong> auprès de l'École Française de Lecteur-Correcteur (EFLC) et un score de 988/1000 à l'examen du Projet Voltaire.</p>
-                <p>Depuis quatre ans, je collabore avec des auteurs qui souhaitent autoéditer leur manuscrit ou l'envoyer à des maisons d'édition.</p>
-                <p>Et si c'était vous ?</p>
-                <a href="#" class="btn">Faisons connaissance !</a>
+                <p>
+                    Le matin, je suis professeure de français et l'après-midi, je travaille au service de vos textes. J'ai obtenu ma <strong>certification de correctrice professionnelle</strong> auprès de l'École Française de Lecteur-Correcteur (EFLC) et un score de 988/1000 à l'examen du Projet Voltaire.
+                </p>
+                <p>
+                    Depuis quatre ans, je collabore avec des auteurs qui souhaitent autoéditer leur manuscrit ou l'envoyer à des maisons d'édition.
+                </p>
+                <p>
+                    Et si c'était vous ?
+                </p>
+                <a href="#" class="cta-button">Faisons connaissance !</a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="question">
-            <div class="question-text">
-                <h2>Faire corriger son roman par l'intelligence artificielle, bonne ou mauvaise idée ?</h2>
+    <section class="blog-preview">
+        <h3>Faire corriger son roman par <em>l'intelligence artificielle</em>,<br> bonne ou mauvaise idée ?</h3>
+    </section>
+<!-- SECTION SERVICES : LES CARTES -->
+    <section class="services-grid">
+        <div class="section-intro">
+            <h2>Mes domaines d'accompagnement</h2>
+            <p>Parce que chaque plume est unique, j'adapte ma correction à votre style et à vos objectifs.</p>
+        </div>
+        
+        <div class="grid-container">
+            <div class="service-card">
+                <div class="icon-circle">🎨</div>
+                <h3>L'Artiste</h3>
+                <p>Correction de manuscrits, romans et recueils de poésie. Je veille à respecter votre voix tout en sublimant le texte.</p>
+                <a href="#" class="link-more">En savoir plus →</a>
             </div>
-            <div class="question-form">
-                <h3>Quel service vous correspond ?</h3>
-                <form>
-                    <label><input type="radio" name="service" value="artist"> L'artiste</label>
-                    <label><input type="radio" name="service" value="student"> L'étudiant</label>
-                    <label><input type="radio" name="service" value="professional"> Le professionnel</label>
-                    <label><input type="radio" name="service" value="particular"> Le particulier</label>
-                </form>
+
+            <div class="service-card">
+                <div class="icon-circle">🎓</div>
+                <h3>L'Étudiant</h3>
+                <p>Thèses, mémoires et rapports de stage. Une relecture rigoureuse pour garantir une syntaxe irréprochable.</p>
+                <a href="#" class="link-more">En savoir plus →</a>
             </div>
-        </section>
-    </main>
 
-    <aside class="chat-widget">
-        <div class="chat-icon">💬</div>
-    </aside>
+            <div class="service-card">
+                <div class="icon-circle">💼</div>
+                <h3>Le Professionnel</h3>
+                <p>Articles de blog, newsletters et rapports annuels. Gagnez en crédibilité auprès de vos clients.</p>
+                <a href="#" class="link-more">En savoir plus →</a>
+            </div>
 
-    <script src="script.js"></script>
+            <div class="service-card">
+                <div class="icon-circle">🏠</div>
+                <h3>Le Particulier</h3>
+                <p>Courriers administratifs, biographies familiales ou lettres de motivation. Soyez lu et compris.</p>
+                <a href="#" class="link-more">En savoir plus →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION CONTACT / BANNIÈRE FINALE -->
+    <section class="final-cta">
+        <div class="cta-box">
+            <h2>Prêt à faire briller vos écrits ?</h2>
+            <p>Discutons de votre projet et obtenez un devis personnalisé sous 48h.</p>
+            <a href="#" class="cta-button">Me contacter</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Sublime Écriture</div>
+            <div class="footer-links">
+                <a href="#">Mentions Légales</a>
+                <a href="#">CGV</a>
+                <a href="#">Politique de confidentialité</a>
+            </div>
+            <div class="socials">
+                <!-- Icônes simplifiées -->
+                <span>Instagram</span> | <span>LinkedIn</span>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2026 Sublime Écriture - Tous droits réservés.</p>
+    </footer>
 </body>
 </html>
