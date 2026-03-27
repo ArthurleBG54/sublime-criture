@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Panier | Sublime Écriture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --beige: #f7efe6;
+            --vert: #6c825a;
+            --noir: #1a1a1a;
+            --gris-clair: #e8e0d7;
+            --blanc: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Lora', serif;
+            background-color: var(--beige);
+            color: var(--noir);
+            line-height: 1.6;
+            padding-bottom: 50px;
+        }
+
+        header {
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--gris-clair);
+        }
+
+        .logo { font-family: 'Playfair Display', serif; font-weight: bold; font-size: 1.2rem; text-transform: uppercase; text-decoration: none; color: var(--noir); }
+
+        .container {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--vert);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        /* Tableau du Panier */
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--blanc);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .cart-table th {
+            background: var(--vert);
+            color: white;
+            text-align: left;
+            padding: 15px;
+            font-weight: 400;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .cart-table td {
+            padding: 20px;
+            border-bottom: 1px solid var(--beige);
+        }
+
+        .product-info { display: flex; align-items: center; gap: 15px; }
+        .product-img { width: 60px; height: 60px; background: var(--beige); border-radius: 5px; object-fit: cover; }
+        
+        .product-name h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; }
+        .product-name p { font-size: 0.8rem; color: #777; }
+
+        input[type="number"] {
+            width: 50px;
+            padding: 5px;
+            border: 1px solid var(--gris-clair);
+            border-radius: 4px;
+            font-family: inherit;
+        }
+
+        .remove-btn {
+            background: none;
+            border: none;
+            color: #cc0000;
+            cursor: pointer;
+            font-size: 0.8rem;
+            text-decoration: underline;
+        }
+
+        /* Résumé de la commande */
+        .cart-footer {
+            margin-top: 30px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .summary-box {
+            background: var(--blanc);
+            padding: 30px;
+            width: 100%;
+            max-width: 350px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .summary-row.total {
+            border-top: 1px solid var(--gris-clair);
+            padding-top: 15px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--vert);
+        }
+
+        .checkout-btn {
+            display: block;
+            width: 100%;
+            background: var(--vert);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 20px;
+            transition: 0.3s;
+            font-weight: 600;
+        }
+
+        .checkout-btn:hover { background: #5a6e4d; }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--noir);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .cart-table thead { display: none; }
+            .cart-table tr { display: block; margin-bottom: 20px; }
+            .cart-table td { display: flex; justify-content: space-between; align-items: center; border: none; }
+            .cart-table td::before { content: attr(data-label); font-weight: bold; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">Sublime Écriture</a>
+        <div class="cart-status">Mon Panier (1)</div>
+    </header>
+
+    <div class="container">
+        <h1>Votre Panier</h1>
+
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Prestation</th>
+                    <th>Prix</th>
+                    <th>Quantité</th>
+                    <th>Total</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="cart-item">
+                    <td data-label="Prestation">
+                        <div class="product-info">
+                            <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?w=100" class="product-img" alt="Service">
+                            <div class="product-name">
+                                <h3>Correction "L'Artiste"</h3>
+                                <p>Forfait 10 000 mots</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td data-label="Prix" class="price">85.00€</td>
+                    <td data-label="Quantité">
+                        <input type="number" value="1" min="1" class="qty-input">
+                    </td>
+                    <td data-label="Total" class="subtotal">85.00€</td>
+                    <td><button class="remove-btn">Supprimer</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="index.html" class="back-link">← Continuer mes lectures</a>
+
+        <div class="cart-footer">
+            <div class="summary-box">
+                <div class="summary-row">
+                    <span>Sous-total</span>
+                    <span id="final-subtotal">85.00€</span>
+                </div>
+                <div class="summary-row">
+                    <span>Frais de dossier</span>
+                    <span>Gratuit</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total</span>
+                    <span id="final-total">85.00€</span>
+                </div>
+                <a href="#" class="checkout-btn">Passer la commande</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const qtyInput = document.querySelector('.qty-input');
+        const priceElement = document.querySelector('.price');
+        const subtotalElement = document.querySelector('.subtotal');
+        const finalSubtotal = document.querySelector('#final-subtotal');
+        const finalTotal = document.querySelector('#final-total');
+        const removeBtn = document.querySelector('.remove-btn');
+        const cartItem = document.querySelector('.cart-item');
+
+        function updatePrices() {
+            const price = parseFloat(priceElement.innerText);
+            const qty = parseInt(qtyInput.value);
+            const total = (price * qty).toFixed(2);
+            
+            subtotalElement.innerText = total + "€";
+            finalSubtotal.innerText = total + "€";
+            finalTotal.innerText = total + "€";
+        }
+
+        qtyInput.addEventListener('change', updatePrices);
+        qtyInput.addEventListener('keyup', updatePrices);
+
+        removeBtn.addEventListener('click', () => {
+            if(confirm("Voulez-vous supprimer cet article ?")) {
+                cartItem.style.display = 'none';
+                document.querySelector('h1').innerText = "Votre panier est vide";
+                document.querySelector('.cart-table').style.display = 'none';
+                document.querySelector('.cart-footer').style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+</html>
